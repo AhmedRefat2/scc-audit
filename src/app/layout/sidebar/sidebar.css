@@ -1,0 +1,27 @@
+
+/* ===== Sidebar ===== */
+.sidebar {
+  flex: 1;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== Buttons ===== */
+.sidebar button {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #ffffff;
+  padding: 16px 18px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: right;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}

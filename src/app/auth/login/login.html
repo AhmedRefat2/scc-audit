@@ -1,0 +1,98 @@
+<div class="login-page d-flex justify-content-center align-items-center">
+  <div class="login-card">
+
+    <!-- Header -->
+    <div class="login-header"></div>
+
+    <div class="login-body">
+      <h2 class="login-title">تسجيل الدخول</h2>
+
+      <form #loginForm="ngForm" (ngSubmit)="login()">
+
+        <!-- User Name -->
+        <div class="form-group mb-3">
+          <label class="form-label">
+            اسم المستخدم <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            class="form-control custom-input"
+            name="userName"
+            [(ngModel)]="userName"
+            #userNameModel="ngModel"
+            required
+          />
+
+          <div
+            class="validation-message"
+            *ngIf="userNameModel.invalid && userNameModel.touched"
+          >
+            اسم المستخدم مطلوب
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group mb-2">
+          <label class="form-label">
+            كلمة المرور <span class="required">*</span>
+          </label>
+
+          <div class="password-wrapper">
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              class="form-control custom-input"
+              name="password"
+              [(ngModel)]="password"
+              #passwordModel="ngModel"
+              required
+              minlength="6"
+            />
+
+            <span
+              class="toggle-password"
+              (click)="showPassword = !showPassword"
+            >
+              👁
+            </span>
+          </div>
+
+          <div
+            class="validation-message"
+            *ngIf="passwordModel.invalid && passwordModel.touched"
+          >
+            <div *ngIf="passwordModel.errors?.['required']">
+              كلمة المرور مطلوبة
+            </div>
+            <div *ngIf="passwordModel.errors?.['minlength']">
+              كلمة المرور يجب ألا تقل عن 6 حروف
+            </div>
+          </div>
+        </div>
+
+        <!-- Forgot Password -->
+        <a class="forgot-password">نسيت كلمة المرور؟</a>
+
+        <!-- Login Button -->
+        <button type="submit" class="btn login-btn w-100 mt-4 d-flex justify-content-center align-items-center"
+        [disabled]="loginForm.invalid || isLoading">
+
+        <!-- Spinner -->
+        <span
+            *ngIf="isLoading"
+            class="spinner-border spinner-border-sm me-2"
+            role="status"
+            aria-hidden="true"
+        ></span>
+
+        <!-- Text -->
+        <span>
+            {{ isLoading ? 'جاري تسجيل الدخول...' : 'تسجيل الدخول' }}
+        </span>
+
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>

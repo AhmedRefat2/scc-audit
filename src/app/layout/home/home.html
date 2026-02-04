@@ -1,0 +1,36 @@
+<div class="home-layout">
+
+  <!-- Right side -->
+  <div class="right">
+
+    <div class="logo">
+        LOGO
+    </div>
+
+    <app-sidebar
+      (sectionChange)="onSectionChange($event)"
+    ></app-sidebar>
+  </div>
+
+  <!-- Left side -->
+  <div class="left">
+
+    <div class="header">
+      {{ pageTitle }}
+    </div>
+
+    <div class="content">
+
+      <div *ngIf="activeSection === 'user'">
+        هنا هيظهر User Actions Component
+      </div>
+
+      <div *ngIf="activeSection === 'case'">
+        هنا هيظهر Case Actions Component
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
