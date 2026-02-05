@@ -1,0 +1,66 @@
+.actions-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.actions-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.actions-header h5 {
+  margin: 0;
+  color: #1f3c88;
+  font-weight: 700;
+}
+
+.actions-body {
+  padding: 24px;
+}
+
+.actions-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.actions-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.actions-header h5 {
+  margin: 0;
+  color: #1f3c88;
+  font-weight: 700;
+}
+
+.actions-body {
+  padding: 24px;
+}
+
+.results-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.results-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.results-header h6 {
+  margin: 0;
+  font-weight: 700;
+  color: #1f3c88;
+}
+
+.empty-state {
+  padding: 40px;
+  text-align: center;
+  color: #888;
+  font-size: 16px;
+}
+

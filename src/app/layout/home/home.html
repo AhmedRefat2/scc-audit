@@ -1,36 +1,39 @@
+<!-- ===== HEADER ===== -->
+<div class="app-header">
+  <!-- Header title (شمالك إنت) -->
+  <div class="header-title">
+    It will be Header
+  </div>
+
+  <!-- LOGO (يمينك إنت) -->
+  <div class="header-logo">
+    LOGO
+  </div>
+</div>
+
+<!-- ===== BODY ===== -->
 <div class="home-layout">
 
-  <!-- Right side -->
-  <div class="right">
+  <!-- ===== CONTENT (شمالك إنت) ===== -->
+  <main class="content">
+    <app-user-actions *ngIf="activeSection === 'user'"></app-user-actions>
+    <app-case-actions *ngIf="activeSection === 'case'"></app-case-actions>
+  </main>
 
-    <div class="logo">
-        LOGO
+  <!-- ===== SIDEBAR COLUMN (يمينك إنت) ===== -->
+  <aside class="sidebar-column">
+
+    <!-- ☰ يظهر في الموبايل مكان الـ Sidebar -->
+    <button class="menu-btn" (click)="toggleSidebar()">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" [class.open]="isSidebarOpen">
+      <app-sidebar
+        [activeSection]="activeSection"
+        (sectionChange)="onSectionChange($event)">
+      </app-sidebar>
     </div>
 
-    <app-sidebar
-      (sectionChange)="onSectionChange($event)"
-    ></app-sidebar>
-  </div>
-
-  <!-- Left side -->
-  <div class="left">
-
-    <div class="header">
-      {{ pageTitle }}
-    </div>
-
-    <div class="content">
-
-      <div *ngIf="activeSection === 'user'">
-        هنا هيظهر User Actions Component
-      </div>
-
-      <div *ngIf="activeSection === 'case'">
-        هنا هيظهر Case Actions Component
-      </div>
-
-    </div>
-
-  </div>
+  </aside>
 
 </div>

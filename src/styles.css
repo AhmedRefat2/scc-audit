@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #eef2f7, #e3ebf3);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #1f3c88;
+}
+
+button {
+  font-weight: 600;
+}
+
+.app-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.app-card-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 700;
+}
+
+.app-card-body {
+  padding: 24px;
+}
+
+
+.table th {
+  background-color: #f1f4fa;
+  color: #1f3c88;
+  font-weight: 600;
+}

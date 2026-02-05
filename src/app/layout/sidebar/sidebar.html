@@ -1,4 +1,19 @@
 <aside class="sidebar">
-  <button (click)="selectUser()">إجراءات المستخدم</button>
-  <button (click)="selectCase()">إجراءات الدعوى</button>
+
+  <button
+    class="sidebar-btn"
+    [class.active]="activeSection === 'user'"
+    (click)="select('user')"
+  >
+    إجراءات المستخدم
+  </button>
+
+  <button
+    class="sidebar-btn"
+    [class.active]="activeSection === 'case'"
+    (click)="select('case')"
+  >
+    إجراءات الدعوى
+  </button>
+
 </aside>

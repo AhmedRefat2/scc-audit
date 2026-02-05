@@ -1,27 +1,32 @@
-
-/* ===== Sidebar ===== */
 .sidebar {
-  flex: 1;
   padding: 24px 18px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
-/* ===== Buttons ===== */
-.sidebar button {
+.sidebar-btn {
+  width: 100%;
   background: rgba(255, 255, 255, 0.15);
   border: none;
   color: #ffffff;
   padding: 16px 18px;
-  border-radius: 12px;
-  font-size: 16px;
+  border-radius: 10px;
+
+  font-size: 15px;
   font-weight: 600;
   text-align: right;
   cursor: pointer;
+
   transition: all 0.2s ease;
 }
 
-.sidebar button:hover {
+.sidebar-btn:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-btn.active {
+  background: #ffffff;
+  color: #23406f;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }

@@ -1,0 +1,87 @@
+<div class="app-card">
+
+  <div class="app-card-header">
+    <h5>إجراءات المستخدم</h5>
+  </div>
+
+  <div class="app-card-body">
+
+    <div class="row g-3 align-items-end">
+
+      <div class="col-md-4">
+        <label class="form-label">اسم الموظف</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="employeeName"
+          placeholder="اختر اسم الموظف"
+        />
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label">من تاريخ</label>
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="dateFrom"
+        />
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label">إلى تاريخ</label>
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="dateTo"
+        />
+      </div>
+
+      <div class="col-md-2 d-grid">
+        <button class="btn btn-primary" (click)="search()">
+          بحث
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ===== Results Section ===== -->
+<div class="results-card mt-4">
+
+  <div class="results-header">
+    <h6>نتائج البحث</h6>
+  </div>
+
+  <!-- Table -->
+  <div *ngIf="hasResults; else emptyState" class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+      <thead>
+        <tr>
+          <th>اسم المستخدم</th>
+          <th>الإجراء</th>
+          <th>التاريخ</th>
+          <th>التفاصيل</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ahmed</td>
+          <td>Login</td>
+          <td>2026-02-01</td>
+          <td>Successful login</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Empty State -->
+  <ng-template #emptyState>
+    <div class="empty-state">
+      لا توجد نتائج للعرض
+    </div>
+  </ng-template>
+
+</div>

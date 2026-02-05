@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -16,13 +17,21 @@ export class LoginPage {
   showPassword: boolean = false;
 
   isLoading: boolean = false;
-
+  errorMessage: string = '';
+  
+  
+  constructor(private router: Router) {}
   login() {
+    this.errorMessage = '';
     this.isLoading = true;
-    // simulate API call
+
+    // Fake login (stub)
     setTimeout(() => {
       this.isLoading = false;
-      alert('Login Success');
-    }, 2000);
+
+      // أي بيانات = نجاح
+      this.router.navigate(['/home']);
+
+    }, 1000);
   }
 }

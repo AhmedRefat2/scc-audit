@@ -1,59 +1,108 @@
-/* ===== Layout ===== */
-.home-layout {
+/* ================= HEADER ================= */
+.app-header {
+  height: 70px;
   display: flex;
-  height: 100vh;
-  background: linear-gradient(135deg, #eef2f7, #e3ebf3);
-  direction: rtl;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-}
-
-/* ===== Right (Sidebar container) ===== */
-.right {
-  width: 25%;
-  background: linear-gradient(to bottom, #23406f, #2f80ed);
-  display: flex;
-  flex-direction: column;
-  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.15);
-}
-
-/* ===== Logo ===== */
-.logo {
-  height: 90px;
-  display: flex;
+  justify-content: space-between; /* شمال / يمين بصري */
   align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: 700;
-  color: #ffffff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-/* ===== Left (Main area) ===== */
-.left {
-  flex: 1;  
-  display: flex;
-  flex-direction: column;
-}  
-
-
-/* ===== Header ===== */
-.header {
-  height: 80px;
+  padding: 0 24px;
   background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 32px;
-  font-size: 22px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* Header title (شمالك) */
+.header-title {
+  font-size: 20px;
   font-weight: 700;
   color: #1f3c88;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  z-index: 1;
+
+  direction: rtl;
+  text-align: right;
 }
 
-/* ===== Content ===== */
+/* LOGO (يمينك) */
+.header-logo {
+  width: 220px; /* عرض ثابت */
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #23406f;
+}
+
+/* ================= LAYOUT ================= */
+.home-layout {
+  display: flex;
+  height: calc(100vh - 70px);
+}
+
+/* ================= CONTENT (شمالك) ================= */
 .content {
   flex: 1;
   padding: 32px;
-  background-color: #f9fafc;
+  background: #f9fafc;
+  overflow-y: auto;
+
+  /* عربي */
+  direction: rtl;
+  text-align: right;
 }
+
+/* ================= SIDEBAR COLUMN (يمينك) ================= */
+.sidebar-column {
+  width: 220px;
+  background: linear-gradient(#23406f, #2f80ed);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ☰ Button */
+.menu-btn {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  padding: 12px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  flex: 1;
+  overflow-y: auto;
+
+  /* عربي */
+  direction: rtl;
+  text-align: right;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  /* مكان الزر فقط */
+  .sidebar-column {
+    width: 70px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  /* Sidebar مخفي */
+  .sidebar {
+    display: none;
+  }
+
+  /* Sidebar Overlay */
+  .sidebar.open {
+    display: block;
+    position: fixed;
+    top: 70px;
+    right: 0; /* يمينك */
+    width: 260px;
+    height: calc(100vh - 70px);
+    background: linear-gradient(#23406f, #2f80ed);
+    z-index: 1500;
+  }
+}
+

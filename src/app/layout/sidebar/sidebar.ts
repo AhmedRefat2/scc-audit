@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,13 +10,10 @@ import { CommonModule } from '@angular/common';
 })
 export class SidebarComponent {
 
+  @Input() activeSection: 'user' | 'case' = 'user';
   @Output() sectionChange = new EventEmitter<'user' | 'case'>();
 
-  selectUser() {
-    this.sectionChange.emit('user');
-  }
-
-  selectCase() {
-    this.sectionChange.emit('case');
+  select(section: 'user' | 'case'): void {
+    this.sectionChange.emit(section);
   }
 }
